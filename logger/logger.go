@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"time"
 	"log"
+	"os"
 )
 
 var (
@@ -12,8 +13,8 @@ var (
 )
 
 func forError(text string, er error) {
-	if er != nil {
+	if err != nil {
 		LogFile.Println(text, er)
-		LogFile.Println(fmt.Sprintf("%s: %s", time.Now().Format("2006.01.02 15:04:05"), er))
+		LogFile.Println(fmt.Sprintf("%s: %s", time.Now().Format("2006.01.02 15:04:05"), err))
 	}
 }
