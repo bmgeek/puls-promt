@@ -3,9 +3,11 @@ package logger
 import (
 	"fmt"
 	"time"
+	"log"
 )
 
 var (
+	outfile, _    = os.OpenFile(fmt.Sprintf(os.Getenv("XPIE_LOGS_FILE")), os.O_RDWR|os.O_CREATE|os.O_APPEND, 0755)
 	LogFile       = log.New(outfile, "", 0)
 )
 
