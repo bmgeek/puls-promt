@@ -12,9 +12,12 @@ var (
 	LogFile       = log.New(outfile, "", 0)
 )
 
-func forError(text string, err error) {
+func ForError(text string, err error) {
 	if err != nil {
-		LogFile.Println(text, err)
-		LogFile.Println(fmt.Sprintf("%s: %s", time.Now().Format("2006.01.02 15:04:05"), err))
+		LogFile.Println(fmt.Sprintf("%s ERROR %s\n%s", time.Now().Format("2006.01.02 15:04:05"), err, text))
 	}
+}
+
+func ForInfo(text string) {
+	LogFile.Println(fmt.Sprintf("%s INFO %s", time.Now().Format("2006.01.02 15:04:05"), text))
 }
